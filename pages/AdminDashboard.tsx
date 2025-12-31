@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Project, ProjectType, Admin } from '../types';
-import { getProjects, saveProject, deleteProject, getAdmins, updateAdmin } from '../services/storage';
+import { Project, ProjectType, Admin } from '../types.ts';
+import { getProjects, saveProject, deleteProject, getAdmins, updateAdmin } from '../services/storage.ts';
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();

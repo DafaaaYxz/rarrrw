@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getProjects, saveProject } from '../services/storage';
-import { Project, ProjectType } from '../types';
+import { getProjects, saveProject } from '../services/storage.ts';
+import { Project, ProjectType } from '../types.ts';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();

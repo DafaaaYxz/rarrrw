@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { getAdmins } from '../services/storage';
+import { getAdmins } from '../services/storage.ts';
 
 const Profile: React.FC = () => {
   const admins = getAdmins();
@@ -12,7 +12,7 @@ const Profile: React.FC = () => {
         <p className="text-zinc-500">Keluarga Besar Source Code Hub</p>
       </header>
 
-      {admins.map((admin, idx) => (
+      {admins.map((admin) => (
         <div key={admin.id} className="glass-card rounded-[2.5rem] p-8 md:p-12 border-zinc-800 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-10 relative overflow-hidden">
           {/* Subtle rank tag */}
           <div className="absolute top-6 right-8 text-xs font-mono-tech text-red-600 bg-red-600/10 px-4 py-1 rounded-full border border-red-900/50">
@@ -21,8 +21,11 @@ const Profile: React.FC = () => {
 
           <div className="shrink-0">
             <div className="w-32 h-32 md:w-48 md:h-48 rounded-[2.5rem] border-4 border-red-600 overflow-hidden red-glow">
-              {/* Fix: Property 'admin_1' does not exist on type 'Admin'. Comparing id to 'admin_1' string instead. */}
-              <img src={admin.id === 'admin_1' ? 'https://picsum.photos/seed/silver/400/400' : admin.photoUrl} alt={admin.name} className="w-full h-full object-cover" />
+              <img 
+                src={admin.id === 'admin_1' ? 'https://picsum.photos/seed/silver/400/400' : admin.photoUrl} 
+                alt={admin.name} 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
 

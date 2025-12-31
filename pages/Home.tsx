@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { getProjects } from '../services/storage';
-import { Project } from '../types';
-import ProjectCard from '../components/ProjectCard';
-import ChatSection from '../components/ChatSection';
+import { getProjects } from '../services/storage.ts';
+import { Project } from '../types.ts';
+import ProjectCard from '../components/ProjectCard.tsx';
+import ChatSection from '../components/ChatSection.tsx';
 
 const Home: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
